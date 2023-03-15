@@ -11,7 +11,7 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions
     public InputActions inputActions;
     public event UnityAction<Vector3> moveEvent;
     public event UnityAction jumpEvent;
-    public event UnityAction attack;
+    public event UnityAction attackEvent;
     public event UnityAction<Vector2> mouseEvent;
     public event UnityAction<bool> sprintEvent;
 
@@ -45,7 +45,10 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+        {
+            attackEvent?.Invoke();
+        }
     }
 
     public void OnJumping(InputAction.CallbackContext context)
