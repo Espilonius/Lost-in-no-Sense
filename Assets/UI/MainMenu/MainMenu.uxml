@@ -1,17 +1,24 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/StyleSheets/styles.uss?fileID=7433441132597879392&amp;guid=7b9a1339ff0491242a22032e29fbbc18&amp;type=3#styles" />
-    <ui:VisualElement name="MainScreen" class="container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+    <ui:VisualElement name="Screen" class="container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
         <ui:VisualElement name="__________Main__________" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); display: none;" />
-        <ui:VisualElement name="Background" class="onPauseHide" style="flex-grow: 0; background-color: rgb(255, 255, 255); overflow: visible; position: absolute; flex-basis: 100%; flex-shrink: 0; width: 100%; height: 100%;" />
+        <ui:VisualElement name="background" class="onPauseHide" style="flex-grow: 0; background-color: rgb(255, 255, 255); overflow: visible; position: absolute; flex-basis: 100%; flex-shrink: 0; width: 100%; height: 100%;" />
         <ui:Label tabindex="-1" text="Lost In No Sense" display-tooltip-when-elided="true" name="lbTitle" class="title onSettingsHide" />
         <ui:Button text="Start" display-tooltip-when-elided="true" name="btnStart" class="button onPauseHide onSettingsHide" />
         <ui:Button text="Settings" display-tooltip-when-elided="true" name="btnSettings" class="button onSettingsHide" />
         <ui:Button text="Exit" display-tooltip-when-elided="true" name="btnExit" class="button onPauseHide onSettingsHide" />
         <ui:VisualElement name="__________Pause__________" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); display: none;" />
-        <ui:VisualElement name="Background2" class="onPauseShow" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0.8); overflow: visible; position: absolute; flex-basis: 100%; flex-shrink: 0; width: 100%; height: 100%;" />
+        <ui:VisualElement name="background2" class="onPauseShow" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0.8); overflow: visible; position: absolute; flex-basis: 100%; flex-shrink: 0; width: 100%; height: 100%;" />
         <ui:Button text="Resume" display-tooltip-when-elided="true" name="btnResume" class="button onPauseShow onSettingsHide" />
         <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="btnMain" class="button onPauseShow onSettingsHide" />
         <ui:VisualElement name="__________Settings__________" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); display: none;" />
         <ui:Label tabindex="-1" text="Settings" display-tooltip-when-elided="true" name="lbSettings" class="title" />
+        <ui:Button text="Back" display-tooltip-when-elided="true" name="btnBack" class="button onSettingsShow" />
+        <ui:Slider picking-mode="Ignore" label="Horizontal Sensitivity" value="42" high-value="100" name="sliderH" class="onSettingsShow" />
+        <ui:Slider picking-mode="Ignore" label="Vertical Sensitivity" value="42" high-value="100" name="sliderV" class="onSettingsShow" />
+        <ui:Slider picking-mode="Ignore" label="Volume" value="42" high-value="100" name="sliderVolume" class="onSettingsShow" />
+        <ui:Toggle label="Invert Y" name="toggleY" class="onSettingsShow" />
+        <ui:Toggle label="Fullscreen" name="toggleFullscreen" class="onSettingsShow" />
+        <ui:DropdownField label="Screen Resolution" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ddfResolutions" />
     </ui:VisualElement>
 </ui:UXML>
