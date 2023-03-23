@@ -1,0 +1,34 @@
+.container {
+    font-size: 40px;
+    -unity-font-style: bold;
+}
+
+.button {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+.title {
+    font-size: 60px;
+}
+
+.pauseVariant {
+}
+
+.onPauseShow {
+    display: none;
+}
+
+.onPauseHide {
+    display: flex;
+}
+
+.settingsClicked {
+}
+
+.onSettingsShow {
+}
+
+.onSettingsHide {
+    display: none;
+}
