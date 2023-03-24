@@ -17,7 +17,6 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
     public event UnityAction rightMouseButtonEvent;
     public event UnityAction escapeEvent;
 
-
     private void OnEnable()
     {
         if (inputActions == null)
