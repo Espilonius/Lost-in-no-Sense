@@ -29,23 +29,22 @@ public class MainMenu : MonoBehaviour
 
     // Settings
     //[SerializeField] private InputReader inputReader;
-    [SerializeField] private string mainMenuScene;
+    [SerializeField] string mainMenuScene;
     [SerializeField] string firstLevelScene;
 
-    
     void OnEnable()
     {
         menuUIDocument = GetComponent<UIDocument>();
 
         // Debug Null Reference
-        if(menuUIDocument == null)
+        if (menuUIDocument == null)
         {
             Debug.Log("No Visual Elements found");
         }
 
 
         // Background
-            UIbackground = menuUIDocument.rootVisualElement.Q("background");
+        UIbackground = menuUIDocument.rootVisualElement.Q("background");
         // Text
         lbTitle = menuUIDocument.rootVisualElement.Q("lbTitle") as Label;
         lbSettings = menuUIDocument.rootVisualElement.Q("lbSettings") as Label;
@@ -53,22 +52,22 @@ public class MainMenu : MonoBehaviour
 
         // Main Menu Visual Elements
         btnStart = menuUIDocument.rootVisualElement.Q("btnStart") as Button;
-            btnSettings = menuUIDocument.rootVisualElement.Q("btnSettings") as Button;
-            btnExit = menuUIDocument.rootVisualElement.Q("btnExit") as Button;
+        btnSettings = menuUIDocument.rootVisualElement.Q("btnSettings") as Button;
+        btnExit = menuUIDocument.rootVisualElement.Q("btnExit") as Button;
         // Pause Menu Visual Elements
-            btnResume = menuUIDocument.rootVisualElement.Q("btnResume") as Button;
-            btnMain = menuUIDocument.rootVisualElement.Q("btnMain") as Button;
+        btnResume = menuUIDocument.rootVisualElement.Q("btnResume") as Button;
+        btnMain = menuUIDocument.rootVisualElement.Q("btnMain") as Button;
         // Settings Menu Visual Elements
-            btnBack = menuUIDocument.rootVisualElement.Q("btnBack") as Button;
+        btnBack = menuUIDocument.rootVisualElement.Q("btnBack") as Button;
 
-            sliderH = menuUIDocument.rootVisualElement.Q("sliderH") as Slider;
-            sliderV = menuUIDocument.rootVisualElement.Q("sliderV") as Slider;
-            sliderVolume = menuUIDocument.rootVisualElement.Q("sliderVolume") as Slider;
+        sliderH = menuUIDocument.rootVisualElement.Q("sliderH") as Slider;
+        sliderV = menuUIDocument.rootVisualElement.Q("sliderV") as Slider;
+        sliderVolume = menuUIDocument.rootVisualElement.Q("sliderVolume") as Slider;
 
-            toggleFullscreen = menuUIDocument.rootVisualElement.Q("toggleFullscreen") as Toggle;
-            toggleInvertY = menuUIDocument.rootVisualElement.Q("toggleInvertY") as Toggle;
+        toggleFullscreen = menuUIDocument.rootVisualElement.Q("toggleFullscreen") as Toggle;
+        toggleInvertY = menuUIDocument.rootVisualElement.Q("toggleInvertY") as Toggle;
 
-            ddfResolutions = menuUIDocument.rootVisualElement.Q("ddfResolutions") as DropdownField;
+        ddfResolutions = menuUIDocument.rootVisualElement.Q("ddfResolutions") as DropdownField;
 
 
         // On enable load the 
@@ -79,10 +78,12 @@ public class MainMenu : MonoBehaviour
         //SettingsMenuEvents();
     }
 
+    
+
     // Remove the UI 
     void HideAllElements()
     {
-        UIbackground.AddToClassList("hide"); 
+        UIbackground.AddToClassList("hide");
         lbTitle.AddToClassList("hide");
         lbSettings.AddToClassList("hide");
         btnStart.AddToClassList("hide");
@@ -109,7 +110,6 @@ public class MainMenu : MonoBehaviour
         btnSettings.RemoveFromClassList("hide");
         btnExit.RemoveFromClassList("hide");
         MainMenuEvents();
-
     }
     void ShowSettingsMenu()
     {
@@ -140,41 +140,38 @@ public class MainMenu : MonoBehaviour
 
     private void MainMenuEvents()
     {
-        btnStart.clicked += () => {
-            SceneManager.LoadScene(firstLevelScene,LoadSceneMode.Single);
-            HideAllElements();
-        };
-        btnSettings.clicked += () => { 
-            ShowSettingsMenu();
-        };
-        btnExit.clicked += () => {
-            Application.Quit();
-        };
-    }
-    private void PauseMenuEvents()
-    {
-        btnResume.clicked += () =>
+        btnStart.clicked += () =>
         {
-            //inputReader.EnableGameplay();
+            SceneManager.LoadScene(firstLevelScene);
             HideAllElements();
         };
         btnSettings.clicked += () =>
         {
             ShowSettingsMenu();
         };
-
-        btnMain.clicked += () =>
+        btnExit.clicked += () =>
         {
-            SceneManager.LoadScene(mainMenuScene);
-            ShowMainMenu();
+            Application.Quit();
         };
     }
+    private void PauseMenuEvents()
+    {
+        btnResume.clicked += HideAllElements;
+
+        btnSettings.clicked += ShowSettingsMenu;
+
+        btnMain.clicked += ShowMainMenu;
+        btnMain.clicked += () => SceneManager.LoadScene(mainMenuScene);
+    }
+
+
     private void SettingsMenuEvents()
     {
-        btnBack.clicked += () => {
+        btnBack.clicked += () =>
+        {
             SceneManager.LoadScene(firstLevelScene);
             HideAllElements();
         };
     }
 }
- 
+
