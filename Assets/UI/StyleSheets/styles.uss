@@ -10,22 +10,13 @@
 
 .title {
     font-size: 60px;
+    color: rgb(255, 255, 255);
 }
 
-.pauseVariant {
-}
-
-.onPauseShow {
+.hide {
     display: none;
 }
 
-.onPauseHide {
-    display: flex;
-}
-
-.onSettingsShow {
-}
-
-.onSettingsHide {
-    display: none;
+.h1 {
+    color: rgb(255, 255, 255);
 }
