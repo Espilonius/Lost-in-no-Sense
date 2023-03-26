@@ -225,6 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467022406}
   - component: {fileID: 467022405}
+  - component: {fileID: 467022407}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 01dae9cc9f7133341b5a6032a058d60e,
     type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 0
 --- !u!4 &467022406
 Transform:
   m_ObjectHideFlags: 0
@@ -264,6 +265,22 @@ Transform:
   m_Father: {fileID: 1331469205}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467022407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467022404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2c000fbe5856f46814c99482111124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
+  mainMenu: {fileID: 467022404}
+  settingsMenu: {fileID: 1715301712}
+  levelStart: SampleScene
 --- !u!1 &1331469202
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +292,7 @@ GameObject:
   - component: {fileID: 1331469205}
   - component: {fileID: 1331469204}
   - component: {fileID: 1331469203}
+  - component: {fileID: 1331469206}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -355,6 +373,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1331469206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331469202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a0b07e646440b4fb5d588661b83ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
+  currentMenu: {fileID: 467022404}
 --- !u!1001 &1715301710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +395,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1331469205}
     m_Modifications:
+    - target: {fileID: 2600641035648510783, guid: ac835454d71a47b4cac27e20119b65c0,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2600641035648510784, guid: ac835454d71a47b4cac27e20119b65c0,
         type: 3}
       propertyPath: m_RootOrder
@@ -426,7 +463,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2600641035648510785, guid: ac835454d71a47b4cac27e20119b65c0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1715301713}
   m_SourcePrefab: {fileID: 100100000, guid: ac835454d71a47b4cac27e20119b65c0, type: 3}
 --- !u!4 &1715301711 stripped
 Transform:
@@ -434,6 +475,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1715301710}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1715301712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2600641035648510785, guid: ac835454d71a47b4cac27e20119b65c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1715301710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1715301713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715301712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae41e954bcf40e64b9ed92ea5506d22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 11400000, guid: 0b037a3df907e784687c6b59748b3def, type: 2}
+  inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
+  currentMenu: {fileID: 467022404}
+  settingsMenu: {fileID: 1715301712}
 --- !u!1 &2082083565
 GameObject:
   m_ObjectHideFlags: 0

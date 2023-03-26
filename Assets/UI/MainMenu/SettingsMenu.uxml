@@ -8,7 +8,7 @@
         <ui:Slider picking-mode="Ignore" label="Vertical Sensitivity" value="42" high-value="100" name="sliderV" class="h1" />
         <ui:Slider picking-mode="Ignore" label="Volume" value="42" high-value="100" name="sliderVolume" class="h1" />
         <ui:Toggle label="Invert Y" name="toggleInvertY" class="onSettingsShow h1" />
-        <ui:Toggle label="Fullscreen" name="toggleFullscreen" class="onSettingsShow h1" />
+        <ui:Toggle label="Fullscreen" name="toggleFullscreen" value="false" class="onSettingsShow h1" />
         <ui:DropdownField label="Screen Resolution" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ddfResolutions" class="h1" />
     </ui:VisualElement>
 </ui:UXML>
