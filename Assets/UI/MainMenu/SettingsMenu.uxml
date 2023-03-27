@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StyleSheets/styles.uss?fileID=7433441132597879392&amp;guid=7b9a1339ff0491242a22032e29fbbc18&amp;type=3#styles" />
+    <ui:VisualElement name="Screen" class="container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="background" style="flex-grow: 0; background-color: rgb(0, 0, 0); position: absolute; flex-basis: 100%; flex-shrink: 0; width: 100%; height: 100%;" />
+        <ui:Label tabindex="-1" text="Settings" display-tooltip-when-elided="true" name="lbSettings" class="title" />
+        <ui:Button text="Back" display-tooltip-when-elided="true" name="btnBack" class="button" />
+        <ui:Slider picking-mode="Ignore" label="Horizontal Sensitivity" value="42" high-value="100" name="sliderH" class="h1" />
+        <ui:Slider picking-mode="Ignore" label="Vertical Sensitivity" value="42" high-value="100" name="sliderV" class="h1" />
+        <ui:Slider picking-mode="Ignore" label="Volume" value="42" high-value="100" name="sliderVolume" class="h1" />
+        <ui:Toggle label="Invert Y" name="toggleInvertY" class="onSettingsShow h1" />
+        <ui:Toggle label="Fullscreen" name="toggleFullscreen" value="false" class="onSettingsShow h1" />
+        <ui:DropdownField label="Screen Resolution" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ddfResolutions" class="h1" />
+    </ui:VisualElement>
+</ui:UXML>
