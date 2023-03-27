@@ -12,6 +12,7 @@ public class PlayerSettings : ScriptableObject
     public float HorizontalSensitivity { get => horizontalSensitivity;  }
     public float VerticalSensitivity { get => verticalSensitivity; }
     public bool InvertY { get => invertY; }
+    //public void FullScreenToggle() => Screen.fullScreen = !Screen.fullScreen;
 
     private void Awake()
     {
