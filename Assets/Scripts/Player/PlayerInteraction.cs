@@ -34,6 +34,15 @@ public class PlayerInteraction : MonoBehaviour
         CheckHands();
     }
 
+    public Rigidbody GetLeftHandItem()
+    {
+        return leftHandItem;
+    }
+    public Rigidbody GetRightHandItem()
+    {
+        return rightHandItem;
+    }
+
     private void CheckHands()
     {
         //let the items fly towards hand position

@@ -16,6 +16,7 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
     public event UnityAction leftMouseButtonEvent;
     public event UnityAction rightMouseButtonEvent;
     public event UnityAction escapeEvent;
+    public event UnityAction combineEvent;
 
     private void OnEnable()
     {
@@ -74,8 +75,7 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
         if (context.phase == InputActionPhase.Performed)
         {
             sprintEvent?.Invoke(context.ReadValue<float>() > 0);
-        }
-        
+        }        
     }
 
     public void OnLeftMouseButton(InputAction.CallbackContext context)
@@ -126,5 +126,13 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
 
     public void OnRightClick(InputAction.CallbackContext context)
     {
+    }
+
+    public void OnCombine(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            combineEvent?.Invoke();
+        }
     }
 }

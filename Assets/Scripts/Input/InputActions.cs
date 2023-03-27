@@ -89,6 +89,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Combine"",
+                    ""type"": ""Button"",
+                    ""id"": ""996c0a34-d45b-48b0-b60e-84845ece9f80"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -210,6 +219,17 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1331f0f6-4aae-4076-918f-a5d8861cf3d9"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Combine"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -503,6 +523,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_PlayerInput_LeftMouseButton = m_PlayerInput.FindAction("LeftMouseButton", throwIfNotFound: true);
         m_PlayerInput_RightMouseButton = m_PlayerInput.FindAction("RightMouseButton", throwIfNotFound: true);
         m_PlayerInput_Escape = m_PlayerInput.FindAction("Escape", throwIfNotFound: true);
+        m_PlayerInput_Combine = m_PlayerInput.FindAction("Combine", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -580,6 +601,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInput_LeftMouseButton;
     private readonly InputAction m_PlayerInput_RightMouseButton;
     private readonly InputAction m_PlayerInput_Escape;
+    private readonly InputAction m_PlayerInput_Combine;
     public struct PlayerInputActions
     {
         private @InputActions m_Wrapper;
@@ -591,6 +613,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @LeftMouseButton => m_Wrapper.m_PlayerInput_LeftMouseButton;
         public InputAction @RightMouseButton => m_Wrapper.m_PlayerInput_RightMouseButton;
         public InputAction @Escape => m_Wrapper.m_PlayerInput_Escape;
+        public InputAction @Combine => m_Wrapper.m_PlayerInput_Combine;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -621,6 +644,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Escape.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnEscape;
                 @Escape.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnEscape;
                 @Escape.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnEscape;
+                @Combine.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCombine;
+                @Combine.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCombine;
+                @Combine.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCombine;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -646,6 +672,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Escape.started += instance.OnEscape;
                 @Escape.performed += instance.OnEscape;
                 @Escape.canceled += instance.OnEscape;
+                @Combine.started += instance.OnCombine;
+                @Combine.performed += instance.OnCombine;
+                @Combine.canceled += instance.OnCombine;
             }
         }
     }
@@ -756,6 +785,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnLeftMouseButton(InputAction.CallbackContext context);
         void OnRightMouseButton(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
+        void OnCombine(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
