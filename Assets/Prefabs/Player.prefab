@@ -508,6 +508,10 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: b209d1c2df586c542bf9c8427cf239c7, type: 2}
   leftHandPosition: {fileID: 3177793043202520000}
   rightHandPosition: {fileID: 5496191888586453596}
+  leftHandItem: {fileID: 0}
+  rightHandItem: {fileID: 0}
+  aimPos: {fileID: 0}
+  range: 0
 --- !u!1 &8983174284389739861
 GameObject:
   m_ObjectHideFlags: 0
