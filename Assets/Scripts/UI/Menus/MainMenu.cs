@@ -14,13 +14,12 @@ public class MainMenu : MonoBehaviour
     Button btnSettings;
     Button btnExit;
 
-    [SerializeField] string levelStart;
+    [SerializeField] int startingLevelIndex;
 
     void OnEnable()
     {
         inputReader.EnableUI();
         Time.timeScale = 0f;
-
 
         
         MainMenuEvents();
@@ -38,7 +37,8 @@ public class MainMenu : MonoBehaviour
 
         // ------------- EVENTS -----------------
         btnStart.clicked += () => {
-            SceneManager.LoadScene(levelStart);
+            inputReader.EnableGameplay();
+            SceneManager.LoadScene(startingLevelIndex);
             Debug.Log("start clicked");
         };
         btnSettings.clicked += () => { settingsMenu.SetActive(true); mainMenu.SetActive(false); };

@@ -18,12 +18,19 @@ public class MenuManager : MonoBehaviour
     {
         if (inputReader.inputActions.UI.enabled)
         {
-
             currentMenu.SetActive(false);
+            inputReader.EnableGameplay();
+
         }
         else if (inputReader.inputActions.PlayerInput.enabled)
         {
+            Debug.Log(inputReader.inputActions.PlayerInput.enabled);
+
+            inputReader.EnableUI();
+
             currentMenu.SetActive(true);
+            Debug.Log(inputReader.inputActions.PlayerInput.enabled);
+
         }
     }
 }

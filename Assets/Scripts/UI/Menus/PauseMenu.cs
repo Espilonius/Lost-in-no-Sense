@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu, settingsMenu;
 
     // UI Document component
-    UIDocument menuUIDocument;
+    [SerializeField] UIDocument menuUIDocument;
 
     // Visual Elements
     Button btnResume;
@@ -17,11 +17,8 @@ public class PauseMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log(inputReader);
-
         inputReader.EnableUI();
         Time.timeScale = 0f;
-        Debug.Log(inputReader);
 
         // Everytime the pause menu is reopened, make sure the settings menu is closed.
         pauseMenu.SetActive(true);
@@ -32,24 +29,24 @@ public class PauseMenu : MonoBehaviour
         Debugging();
     }
 
-    private void OnDisable()
+
+/*    void SetMenus()
     {
-        Time.timeScale = 1f;
-        inputReader.EnableGameplay();
-    }
+        pauseMenu = this.gameObject;
+        settingsMenu = GameObject.Find("SettingsMenu");
 
-
+    }*/
     void PauseMenuEvents()
     {
         // ------------- LOGIC -----------------
-        menuUIDocument = GetComponent<UIDocument>();
+        //menuUIDocument = GetComponent<UIDocument>();
         VisualElement root = menuUIDocument.rootVisualElement;
         btnSettings = (Button)root.Q("btnSettings");
         btnResume = (Button)root.Q("btnResume");
         btnMain = (Button)root.Q("btnMain");
 
         // ------------- EVENTS -----------------
-        btnResume.clicked += () => pauseMenu.SetActive(false);
+        btnResume.clicked += () => { pauseMenu.SetActive(false); inputReader.EnableGameplay(); };
         btnSettings.clicked += () => { settingsMenu.SetActive(true); pauseMenu.SetActive(false); } ;
         btnMain.clicked += () => SceneManager.LoadScene("MainMenuScene");
     }

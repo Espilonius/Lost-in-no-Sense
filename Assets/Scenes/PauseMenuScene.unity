@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &482467966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482467967}
+  - component: {fileID: 482467968}
+  m_Layer: 0
+  m_Name: player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &482467967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482467966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12388468, y: 1.801977, z: 1.0050042}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &482467968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482467966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a0b07e646440b4fb5d588661b83ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
+  currentMenu: {fileID: 6898939861513848078}
 --- !u!1 &1666987954
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +391,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8911111276307862916}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6898939859905085128
+--- !u!114 &6898939859905085126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,8 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 11400000, guid: 0b037a3df907e784687c6b59748b3def, type: 2}
   inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
-  currentMenu: {fileID: 6898939861513848078}
   settingsMenu: {fileID: 6898939859905085125}
+  currentMenu: {fileID: 6898939861513848078}
 --- !u!114 &6898939860152916385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +433,6 @@ GameObject:
   - component: {fileID: 6898939860152916399}
   - component: {fileID: 6898939860152916385}
   - component: {fileID: 6898939860152916398}
-  - component: {fileID: 6898939860152916400}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -453,20 +498,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6898939860152916400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6898939860152916396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8a0b07e646440b4fb5d588661b83ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
-  currentMenu: {fileID: 6898939861513848078}
 --- !u!4 &6898939861513848068
 Transform:
   m_ObjectHideFlags: 0
@@ -516,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &6898939861513848079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +563,7 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
   pauseMenu: {fileID: 6898939861513848078}
   settingsMenu: {fileID: 6898939859905085125}
+  menuUIDocument: {fileID: 6898939861513848069}
 --- !u!1001 &8911111276307862916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -617,5 +649,5 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2600641035648510785, guid: ac835454d71a47b4cac27e20119b65c0,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6898939859905085128}
+      addedObject: {fileID: 6898939859905085126}
   m_SourcePrefab: {fileID: 100100000, guid: ac835454d71a47b4cac27e20119b65c0, type: 3}

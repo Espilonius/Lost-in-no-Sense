@@ -6,7 +6,7 @@ public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] PlayerSettings ps;
     [SerializeField] InputReader inputReader;
-    [SerializeField] GameObject currentMenu, settingsMenu;
+    [SerializeField] GameObject settingsMenu, currentMenu;
 
     // UI Document component
     UIDocument menuUIDocument;
@@ -24,8 +24,10 @@ public class SettingsMenu : MonoBehaviour
     Slider sliderVolume;
     // -------------------------------------------
 
+
     private void OnEnable()
     {
+
         inputReader.EnableUI();
         SettingsMenuEvents();
 
@@ -35,7 +37,7 @@ public class SettingsMenu : MonoBehaviour
 
         // -------------------------------------------
     }
- 
+
     void SettingsMenuEvents()
     {
         // ------------- LOGIC -----------------
@@ -54,6 +56,7 @@ public class SettingsMenu : MonoBehaviour
         toggleInvertY.value = ps.InvertY;
         sliderH.value = ps.HorizontalSensitivity;
         sliderV.value = ps.VerticalSensitivity;
+        Debug.Log(toggleInvertY.value);
         //toggleFullscreen.value = ps.toggleFullscreen;
         //audioMixer.GetFloat("Volume", out float vol);
         //sliderVolume.value = vol;
@@ -68,7 +71,7 @@ public class SettingsMenu : MonoBehaviour
             Screen.SetResolution(int.Parse(resolutions[0].Trim()), int.Parse(resolutions[1].Trim()), Screen.fullScreen);
         }*/
     //public void ToggleResolution(int index) => ConvertToResolution(ddfResolutions.options[index].text);
-    //public void FullscreenToggle(bool isFullscreen) => Screen.fullScreen = isFullscreen;
+    public void FullscreenToggle(bool isFullscreen) => Screen.fullScreen = isFullscreen;
     //public void SetVolume(float volume) => audioMixer.SetFloat("Volume", volume);
 
     // ------------- NEW CODE -----------------
