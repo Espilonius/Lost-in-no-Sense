@@ -1138,7 +1138,7 @@ Transform:
   - {fileID: 8787745613805683366}
   - {fileID: 393191820}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &605115956
 MonoBehaviour:
@@ -1441,6 +1441,21 @@ PrefabInstance:
     - target: {fileID: 8787745615424544827, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970101845696543933, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970101845696543933, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970101845696543933, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
