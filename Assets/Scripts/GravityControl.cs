@@ -5,7 +5,7 @@ using UnityEngine;
 public class GravityControl : MonoBehaviour
 {
     [SerializeField] public GravityOrbit gravity;
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private Transform cam;
     private Quaternion targetRotation;
 
@@ -13,7 +13,7 @@ public class GravityControl : MonoBehaviour
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         cam = Camera.main.transform;
     }
 
@@ -44,7 +44,7 @@ public class GravityControl : MonoBehaviour
 
             transform.up = Vector3.Lerp(transform.up, gravityUp, rotationSpeed * Time.deltaTime);
 
-            rigidbody.AddForce((-gravityUp * gravity.Gravity) * rigidbody.mass);
+            rb.AddForce((-gravityUp * gravity.Gravity) * rb.mass);
         }
     }
 
