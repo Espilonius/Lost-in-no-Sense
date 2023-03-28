@@ -6,18 +6,37 @@ using UnityEngine.UIElements;
 
 public class AnimatorController : MonoBehaviour
 {
+    float movementSpeed;
     private Animator animator;
     [SerializeField]InputReader inputReader = default;
     [SerializeField] private StatsSO stats;
+    private Vector3 position = new Vector3();
+    private void OnEnable()
+    {
+        inputReader.moveEvent += OnMove;
+    }
+    private void OnDisable()
+    {
+        inputReader.moveEvent -= OnMove;
+    }
+    private void OnMove(Vector3 value)
+    {
+        // Walk Animation
+        if (value != Vector3.zero)
+        {
+            animator.SetFloat("speed", 0.02f);
+        }
+        // Idle Animation
+        else if (value == Vector3.zero)
+        {
+            animator.SetFloat("speed", 0f);
+        }
 
-
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
-    private void Update()
-    {
-        animator.SetFloat("Speed", stats.MovementSpeed);
-    }
+
 
 }
