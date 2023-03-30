@@ -8,7 +8,7 @@ public class AnimatorController : MonoBehaviour
 {
     float movementSpeed;
     private Animator animator;
-    [SerializeField]InputReader inputReader = default;
+    [SerializeField] InputReader inputReader = default;
     [SerializeField] private StatsSO stats;
     private Vector3 position = new Vector3();
     private void OnEnable()
@@ -19,6 +19,29 @@ public class AnimatorController : MonoBehaviour
     {
         inputReader.moveEvent -= OnMove;
     }
+
+    // Other Animations who need key input
+    // Running animation
+
+    // if(movement speed > walking speed){
+    //      animator.SetFloat("isRunning", runningSpeed);
+    //   }
+    // else if(on keyup spacebar){
+    //      animator.SetFloat("isRunning", runningSpeed);
+    //   }
+
+    // Jumping animation
+
+    // if(on keydown spacebar){
+    //      animator.SetBool("isJumping", true);
+    //   }
+    // else if(on keyup spacebar){ 
+    //      animator.SetBool("isJumping", false);
+    //   }
+
+
+
+    // Movement animation
     private void OnMove(Vector3 value)
     {
         // Walk Animation
