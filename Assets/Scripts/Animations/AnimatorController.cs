@@ -7,9 +7,9 @@ using UnityEngine.UIElements;
 public class AnimatorController : MonoBehaviour
 {
     float movementSpeed;
-    private Animator animator;
     [SerializeField] InputReader inputReader = default;
     [SerializeField] private StatsSO stats;
+    [SerializeField] Animator animator;
     private Vector3 position = new Vector3();
     private void OnEnable()
     {
@@ -22,12 +22,12 @@ public class AnimatorController : MonoBehaviour
 
     // Other Animations who need key input
     // Running animation
-
+    // float runningSpeed = 1f;
     // if(movement speed > walking speed){
-    //      animator.SetFloat("isRunning", runningSpeed);
+    //      animator.SetFloat("speed", runningSpeed);
     //   }
     // else if(on keyup spacebar){
-    //      animator.SetFloat("isRunning", runningSpeed);
+    //      animator.SetFloat("speed", runningSpeed);
     //   }
 
     // Jumping animation
@@ -56,10 +56,4 @@ public class AnimatorController : MonoBehaviour
         }
 
     }
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-
 }
