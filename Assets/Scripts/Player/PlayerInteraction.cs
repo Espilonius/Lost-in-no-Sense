@@ -34,13 +34,13 @@ public class PlayerInteraction : MonoBehaviour
         CheckHands();
     }
 
-    public Rigidbody GetLeftHandItem()
+    public ItemBase GetLeftHandItem()
     {
-        return leftHandItem;
+        return leftHandItem.GetComponent<ItemBase>();
     }
-    public Rigidbody GetRightHandItem()
+    public ItemBase GetRightHandItem()
     {
-        return rightHandItem;
+        return rightHandItem.GetComponent<ItemBase>();
     }
 
     private void CheckHands()

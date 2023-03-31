@@ -1,16 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CombineItems : MonoBehaviour
 {
     [SerializeField] private InputReader inputReader;
 
-    private CombineRecipe[] combineRecipes;
+    [SerializeField] CombineItemsList combineRecipes = default;
 
     [SerializeField] private GameObject player;
-    private Rigidbody playerLeftHandItem;
-    private Rigidbody playerRightHandItem;
+    private PlayerInteraction playerInteraction;
+    private ItemBase playerLeftHandItem;
+    private ItemBase playerRightHandItem;
+    private ICombineChecker combineChecker;
+
+    public event UnityAction<string[]> onCombined;
 
     private void OnEnable()
     {
@@ -20,49 +26,34 @@ public class CombineItems : MonoBehaviour
     {
         inputReader.combineEvent -= Combine;
     }
-    private void Awake()
+    private void Start()
     {
-        combineRecipes = this.GetComponent<CombineItemsList>().GetCombineRecipes();
+        combineChecker = GetComponent<ICombineChecker>();
+        playerInteraction = player.GetComponent<PlayerInteraction>();
     }
 
     private void GetPlayerItems()
     {
-        playerLeftHandItem = player.GetComponent<PlayerInteraction>().GetLeftHandItem();
-        playerRightHandItem = player.GetComponent<PlayerInteraction>().GetRightHandItem();
+        playerLeftHandItem = playerInteraction.GetLeftHandItem();
+        playerRightHandItem = playerInteraction.GetRightHandItem();
     }
     private bool CheckItems()
     {
         if (!playerLeftHandItem || !playerRightHandItem) return false;
         return true;
     }
-    private List<string> CheckRecipes()
+    private string[] CheckRecipes()
     {
         List<string> recipes = new List<string>();
 
-        foreach (CombineRecipe combineRecipe in combineRecipes)
+        foreach (CombineRecipe r in combineRecipes.CombineRecipes)
         {
-            if (combineRecipe.ingredient1.gameObject == playerLeftHandItem.gameObject)
+            if (combineChecker.CanCombine(r.Ingredient1, r.Ingredient2, playerLeftHandItem, playerRightHandItem))
             {
-                if (combineRecipe.ingredient2.gameObject == playerRightHandItem.gameObject)
-                {
-                    recipes.Add(combineRecipe.product.GetName());
-                }
-            }
-            else if (combineRecipe.ingredient2.gameObject == playerLeftHandItem.gameObject)
-            {
-                if (combineRecipe.ingredient1.gameObject == playerRightHandItem.gameObject)
-                {
-                    recipes.Add(combineRecipe.product.GetName());
-                }
+                recipes.Add(r.Product.GetName());
             }
         }
-
-        return recipes;
-    }
-
-    private void ActivateClouds()
-    {
-        player.GetComponent<CombineIdeaCloudsActivate>().ActivateClouds(CheckRecipes());
+        return recipes.ToArray();
     }
 
     //Event method
@@ -70,8 +61,6 @@ public class CombineItems : MonoBehaviour
     {
         GetPlayerItems();
         if (!CheckItems()) return;
-        ActivateClouds();
+        onCombined?.Invoke(CheckRecipes());
     }
-
-    
 }
