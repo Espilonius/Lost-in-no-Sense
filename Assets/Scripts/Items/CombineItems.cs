@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class CombineItems : MonoBehaviour
 {
     [SerializeField] private InputReader inputReader;
+    [SerializeField] private ItemListSO itemListSO = default;
 
     [SerializeField] CombineItemsList combineRecipes = default;
+    [SerializeField] CombineMode combineMode;
 
     [SerializeField] private GameObject player;
     private PlayerInteraction playerInteraction;
@@ -17,14 +20,20 @@ public class CombineItems : MonoBehaviour
     private ICombineChecker combineChecker;
 
     public event UnityAction<string[]> onCombined;
+    public event UnityAction<GameObject> onCombineChoice;
+    public event UnityAction onFinishCombine;
+
+    private const int minRecipes = 0;
 
     private void OnEnable()
     {
         inputReader.combineEvent += Combine;
+        combineMode.onFinishCombine += FinishCombine;
     }
     private void OnDisable()
     {
         inputReader.combineEvent -= Combine;
+        combineMode.onFinishCombine -= FinishCombine;
     }
     private void Start()
     {
@@ -53,7 +62,22 @@ public class CombineItems : MonoBehaviour
                 recipes.Add(r.Product.GetName());
             }
         }
+        EnableCombineMode(recipes);
         return recipes.ToArray();
+    }
+    private void EnableCombineMode(List<string> recipes)
+    {
+        if (recipes.Count <= minRecipes) return;
+        inputReader.EnableCombineMode();
+    }
+
+    private void GetCombineProductItem(CombineCloud combineCloud)
+    {
+        string itemName = combineCloud.GetName();
+        GameObject item = itemListSO.GetItem(itemName);
+        if (item == null) return;
+        onCombineChoice?.Invoke(item);
+        onFinishCombine?.Invoke();
     }
 
     //Event method
@@ -62,5 +86,10 @@ public class CombineItems : MonoBehaviour
         GetPlayerItems();
         if (!CheckItems()) return;
         onCombined?.Invoke(CheckRecipes());
+    }
+    public void FinishCombine(CombineCloud combineCloud)
+    {
+        if (combineCloud == null) return;
+        GetCombineProductItem(combineCloud);
     }
 }

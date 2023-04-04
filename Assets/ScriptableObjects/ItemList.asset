@@ -9,17 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b24ece31933e7342b3a6679d8dfa72d, type: 3}
+  m_Script: {fileID: 11500000, guid: f6c3780afcc20524880775ea3390c244, type: 3}
   m_Name: ItemList
   m_EditorClassIdentifier: 
-  combineRecipes:
-  - item:
-      m_Text: 
-      m_Image: {fileID: 0}
-      m_Tooltip: 
-    ingredient1: {fileID: 61335126500225837, guid: 5e899749d922b74408343126eddc4e80,
-      type: 3}
-    ingredient2: {fileID: 4210206950447086840, guid: 182efb9bee7c54a4b9ac05f415dc400c,
-      type: 3}
-    product: {fileID: 5479864197415341084, guid: 8b004f786410d7648bf626489b0de619,
-      type: 3}
+  itemList:
+  - {fileID: 3017914534222733982, guid: 602bbd6c9fbaa194a859a1df097c0db6, type: 3}
+  - {fileID: 5479864197415341084, guid: 8b004f786410d7648bf626489b0de619, type: 3}
+  - {fileID: 61335126500225837, guid: 5e899749d922b74408343126eddc4e80, type: 3}
+  - {fileID: 4210206950447086840, guid: 182efb9bee7c54a4b9ac05f415dc400c, type: 3}

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4210206950447086842}
   - component: {fileID: 4210206950447086841}
   - component: {fileID: 4210206950447086816}
-  - component: {fileID: 4210206950447086823}
   m_Layer: 0
   m_Name: StoneItem
   m_TagString: Untagged
@@ -36,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4210206950447086821
 MeshFilter:
@@ -159,17 +158,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67e6d3d6edd70ca42a599a7198a5955f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4210206950447086823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4210206950447086840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51149be1e8d5d9e409957796b7a0f488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

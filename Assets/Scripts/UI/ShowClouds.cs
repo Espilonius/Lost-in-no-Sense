@@ -7,23 +7,31 @@ using System;
 
 public class ShowClouds : MonoBehaviour
 {
+    [SerializeField] List<GameObject> combineCloudsPos = new List<GameObject>();
     [SerializeField] List<GameObject> combineIdeaClouds = new List<GameObject>();
 
     [SerializeField] private CombineItems combineItems;
+    [SerializeField] private CombineMode combineMode;
 
     private const int maxAllowedNames = 3;
+    private const int minAllowedNames = 0;
 
     private void OnEnable()
     {
         combineItems.onCombined += ActivateClouds;
+        combineItems.onFinishCombine += DeActivateClouds;
+        combineMode.onExitCombineMode += DeActivateClouds;
     }
     private void OnDisable()
     {
         combineItems.onCombined -= ActivateClouds;
+        combineItems.onFinishCombine += DeActivateClouds;
+        combineMode.onExitCombineMode -= DeActivateClouds;
     }
 
     public void ActivateClouds(string[] names)
     {
+        if (MinimumAmount(names.Length)) return;
         DeActivateClouds();
 
         if (TotalExceeded(names.Length)) return;
@@ -31,7 +39,7 @@ public class ShowClouds : MonoBehaviour
 
         for (int i = 0; i < names.Length; i++)
         {
-            SetCombineCloud(combineIdeaClouds[i], names[i]);
+            SetCombineCloud(combineCloudsPos[i], combineIdeaClouds[i], names[i]);
         }
     }
 
@@ -39,7 +47,17 @@ public class ShowClouds : MonoBehaviour
     {
         if (names.Length == 1)
         {
-            SetCombineCloud(combineIdeaClouds[2], names[0]);
+            SetCombineCloud(combineCloudsPos[2], combineIdeaClouds[2], names[0]);
+            return true;
+        }
+        return false;
+    }
+
+    private bool MinimumAmount(int amount)
+    {
+        if (amount <=  minAllowedNames)
+        {
+            Debug.Log("Item has 0 or less stuff", this);
             return true;
         }
         return false;
@@ -55,9 +73,11 @@ public class ShowClouds : MonoBehaviour
         return false;
     }
 
-    private void SetCombineCloud(GameObject cloud, string itemText)
+    private void SetCombineCloud(GameObject pos, GameObject cloud, string itemText)
     {
         cloud.GetComponentInChildren<TMP_Text>().text = itemText;
+        cloud.transform.position = pos.transform.position;
+        cloud.transform.rotation = pos.transform.rotation;
         cloud.SetActive(true);
     }
 

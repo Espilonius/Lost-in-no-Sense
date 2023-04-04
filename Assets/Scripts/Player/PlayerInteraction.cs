@@ -8,25 +8,33 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] InputReader inputReader = default;
     [SerializeField] private StatsSO stats;
+    [SerializeField] private CombineItems combineItems;
 
     [SerializeField] Transform leftHandPosition;
     [SerializeField] Transform rightHandPosition;
 
-    [SerializeField] Rigidbody leftHandItem;
-    [SerializeField] Rigidbody rightHandItem;
+    [SerializeField] Rigidbody leftHandItem = null;
+    [SerializeField] Rigidbody rightHandItem = null;
+    [SerializeField] ItemBase dummyItem;
+    private Rigidbody stashedLeftHandItem = null;
+    private Rigidbody stashedRightHandItem = null;
 
     [SerializeField] private Transform aimPos;
     [SerializeField] float range = 10f, lerpSpeed = 5f;
+
+    private CombineMode combineMode;
 
     private void OnEnable()
     {
         inputReader.leftMouseButtonEvent += OnLeftHandPickup;
         inputReader.rightMouseButtonEvent += OnRightHandPickup;
+        combineItems.onCombineChoice += CombinedItem;
     }
     private void OnDisable()
     {
         inputReader.leftMouseButtonEvent -= OnLeftHandPickup;
         inputReader.rightMouseButtonEvent -= OnRightHandPickup;
+        combineItems.onCombineChoice -= CombinedItem;
     }
 
     private void Update()
@@ -36,10 +44,18 @@ public class PlayerInteraction : MonoBehaviour
 
     public ItemBase GetLeftHandItem()
     {
+        if (leftHandItem == null)
+        {
+            return dummyItem; 
+        }
         return leftHandItem.GetComponent<ItemBase>();
     }
     public ItemBase GetRightHandItem()
     {
+        if (leftHandItem == null)
+        {
+            return dummyItem;
+        }
         return rightHandItem.GetComponent<ItemBase>();
     }
 
@@ -53,8 +69,7 @@ public class PlayerInteraction : MonoBehaviour
         if (rightHandItem)
         {
             rightHandItem.MovePosition(Vector3.Lerp(rightHandItem.position, rightHandPosition.transform.position, Time.deltaTime * lerpSpeed));
-        }
-
+        }        
     }
 
     private bool LeftHandOccupied()
@@ -91,6 +106,31 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    private void DropLeftHandItem()
+    {
+        DropItem(leftHandItem);
+        leftHandItem = null;
+    }
+    private void DropRightHandItem()
+    {
+        DropItem(rightHandItem);
+        rightHandItem = null;
+    }
+    private void DropAllItems()
+    {
+        stashedLeftHandItem = leftHandItem;
+        leftHandItem = null;
+
+        stashedRightHandItem = rightHandItem;
+        rightHandItem= null;
+    }
+    private void EquipCombinedItem(GameObject combinedItem)
+    {
+        rightHandItem = combinedItem.GetComponent<Rigidbody>();
+        EnableItem(rightHandItem);
+        rightHandItem.transform.position = rightHandPosition.transform.position;
+    }
+
     //Event System
     private void OnLeftHandPickup()
     {
@@ -102,8 +142,7 @@ public class PlayerInteraction : MonoBehaviour
         }        
         else
         {
-            DropItem(leftHandItem);
-            leftHandItem = null;
+            DropLeftHandItem();
         }
     }
 
@@ -117,8 +156,13 @@ public class PlayerInteraction : MonoBehaviour
         }        
         else
         {
-            DropItem(rightHandItem);
-            rightHandItem = null;
+            DropRightHandItem();
         }
+    }
+
+    private void CombinedItem(GameObject item)
+    {
+        DropAllItems();
+        EquipCombinedItem(item);
     }
 }
