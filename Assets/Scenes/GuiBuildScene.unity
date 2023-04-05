@@ -1031,6 +1031,7 @@ MonoBehaviour:
   wanderRadius: 10
   wanderTimer: 10
   timer: 0
+  maxDistance: 1
 --- !u!1001 &1153697626
 PrefabInstance:
   m_ObjectHideFlags: 0
