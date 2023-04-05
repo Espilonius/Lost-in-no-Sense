@@ -366,7 +366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Debugger
+  m_text: Lost In No Sense
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -115.37854, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1328,6 +1328,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 8787745614804576305, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787745614849116491, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8787745615424544804, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
       propertyPath: m_Name
@@ -1336,7 +1346,7 @@ PrefabInstance:
     - target: {fileID: 8787745615424544804, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8787745615424544827, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
@@ -1406,17 +1416,17 @@ PrefabInstance:
     - target: {fileID: 8787745615424544827, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8787745615424544827, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8787745615424544827, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8787745615424544827, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
@@ -1443,6 +1453,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8970101844301070745, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8970101845696543933, guid: be1c7cb6248bc734f91c724dd3db6628,
         type: 3}
       propertyPath: m_IsOn
@@ -1457,6 +1472,21 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970101845832271513, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970101845832535715, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970101846213928362, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
