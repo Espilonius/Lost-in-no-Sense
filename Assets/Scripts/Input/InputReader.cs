@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "InputReader", menuName = "Game/InputReader", order = 1)]
-public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, InputActions.IUIActions
+public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, InputActions.IUIActions, InputActions.ICombineModeActions
 {
     public InputActions inputActions { get; private set; }
     public event UnityAction<Vector3> moveEvent;
@@ -16,6 +16,11 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
     public event UnityAction leftMouseButtonEvent;
     public event UnityAction rightMouseButtonEvent;
     public event UnityAction escapeEvent;
+    public event UnityAction combineEvent;
+    public event UnityAction exitCombineModeEvent;
+    public event UnityAction clickEvent;
+    public event UnityAction<Vector2> mouseMoveEvent;
+    public event UnityAction cloudClickEvent;
 
     private void OnEnable()
     {
@@ -33,12 +38,14 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
 
     private void DisableGameplay() => inputActions.PlayerInput.Disable();
     private void DisableUI() => inputActions.UI.Disable();
+    private void DisableCombineMode() => inputActions.CombineMode.Disable();
 
     public void EnableGameplay()
     {
         inputActions.PlayerInput.Enable();
         inputActions.PlayerInput.SetCallbacks(this);
         DisableUI();
+        DisableCombineMode();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -47,7 +54,17 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
         inputActions.UI.Enable();
         inputActions.UI.SetCallbacks(this);
         DisableGameplay();
+        DisableCombineMode();
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    public void EnableCombineMode()
+    {
+        inputActions.CombineMode.Enable();
+        inputActions.CombineMode.SetCallbacks(this);
+        DisableGameplay();
+        DisableUI();
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
 
@@ -74,18 +91,23 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
         if (context.phase == InputActionPhase.Performed)
         {
             sprintEvent?.Invoke(context.ReadValue<float>() > 0);
-        }
-        
+        }        
     }
 
     public void OnLeftMouseButton(InputAction.CallbackContext context)
     {
-        leftMouseButtonEvent?.Invoke();
-}
+        if (context.phase == InputActionPhase.Performed)
+        {
+            leftMouseButtonEvent?.Invoke();
+        }
+    }
 
     public void OnRightMouseButton(InputAction.CallbackContext context)
     {
-        rightMouseButtonEvent?.Invoke();
+        if (context.phase == InputActionPhase.Performed)
+        {
+            rightMouseButtonEvent?.Invoke();
+        }
     }
 
     public void OnEscape(InputAction.CallbackContext context)
@@ -114,6 +136,10 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
 
     public void OnClick(InputAction.CallbackContext context)
     {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            clickEvent?.Invoke();
+        }
     }
 
     public void OnScrollWheel(InputAction.CallbackContext context)
@@ -126,5 +152,34 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
 
     public void OnRightClick(InputAction.CallbackContext context)
     {
+    }
+
+    public void OnCombine(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            combineEvent?.Invoke();
+        }
+    }
+
+    public void OnExitCombineMode(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            exitCombineModeEvent?.Invoke();
+        }
+    }
+
+    public void OnMouseMove(InputAction.CallbackContext context)
+    {
+        mouseMoveEvent?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnCloudClick(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            cloudClickEvent?.Invoke();
+        }
     }
 }
