@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using static UnityEditor.Progress;
 
 public class CombineItems : MonoBehaviour
 {
@@ -76,6 +77,10 @@ public class CombineItems : MonoBehaviour
         string itemName = combineCloud.GetName();
         GameObject item = itemListSO.GetItem(itemName);
         if (item == null) return;
+        SendEventMessagesEndCombine(item);
+    }
+    private void SendEventMessagesEndCombine(GameObject item)
+    {
         onCombineChoice?.Invoke(item);
         onFinishCombine?.Invoke();
     }

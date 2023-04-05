@@ -104,7 +104,10 @@ public class InputReader : ScriptableObject, InputActions.IPlayerInputActions, I
 
     public void OnRightMouseButton(InputAction.CallbackContext context)
     {
-        rightMouseButtonEvent?.Invoke();
+        if (context.phase == InputActionPhase.Performed)
+        {
+            rightMouseButtonEvent?.Invoke();
+        }
     }
 
     public void OnEscape(InputAction.CallbackContext context)

@@ -18,6 +18,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] ItemBase dummyItem;
     private Rigidbody stashedLeftHandItem = null;
     private Rigidbody stashedRightHandItem = null;
+    private bool hasCombinedItem = false;
 
     [SerializeField] private Transform aimPos;
     [SerializeField] float range = 10f, lerpSpeed = 5f;
@@ -26,14 +27,14 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnEnable()
     {
-        inputReader.leftMouseButtonEvent += OnLeftHandPickup;
-        inputReader.rightMouseButtonEvent += OnRightHandPickup;
+        inputReader.leftMouseButtonEvent += OnLeftHandEvent;
+        inputReader.rightMouseButtonEvent += OnRightHandEvent;
         combineItems.onCombineChoice += CombinedItem;
     }
     private void OnDisable()
     {
-        inputReader.leftMouseButtonEvent -= OnLeftHandPickup;
-        inputReader.rightMouseButtonEvent -= OnRightHandPickup;
+        inputReader.leftMouseButtonEvent -= OnLeftHandEvent;
+        inputReader.rightMouseButtonEvent -= OnRightHandEvent;
         combineItems.onCombineChoice -= CombinedItem;
     }
 
@@ -112,57 +113,93 @@ public class PlayerInteraction : MonoBehaviour
         leftHandItem = null;
     }
     private void DropRightHandItem()
-    {
-        DropItem(rightHandItem);
-        rightHandItem = null;
+    {                
+        if (!hasCombinedItem)
+        {
+            DropItem(rightHandItem);
+            rightHandItem = null;
+        }
+        if (hasCombinedItem)
+        {
+            Destroy(rightHandItem.gameObject);
+            UnStashCombineBaseItems();
+            hasCombinedItem = false;
+        }
     }
-    private void DropAllItems()
+    private void StashCombineBaseItems()
     {
         stashedLeftHandItem = leftHandItem;
+        stashedLeftHandItem.gameObject.SetActive(false);
         leftHandItem = null;
 
         stashedRightHandItem = rightHandItem;
-        rightHandItem= null;
+        stashedRightHandItem.gameObject.SetActive(false);
+        rightHandItem = null;
+    }
+    private void UnStashCombineBaseItems()
+    {
+        leftHandItem = stashedLeftHandItem;
+        leftHandItem.transform.position = leftHandPosition.position;
+        leftHandItem.gameObject.SetActive(true);
+        stashedLeftHandItem = null;
+
+        rightHandItem = stashedRightHandItem;
+        rightHandItem.transform.position = rightHandPosition.position;
+        rightHandItem.gameObject.SetActive(true);
+        stashedRightHandItem = null;
     }
     private void EquipCombinedItem(GameObject combinedItem)
     {
         rightHandItem = combinedItem.GetComponent<Rigidbody>();
         EnableItem(rightHandItem);
         rightHandItem.transform.position = rightHandPosition.transform.position;
+        hasCombinedItem = true;
     }
 
-    //Event System
-    private void OnLeftHandPickup()
+
+    private void LeftHandPickup()
     {
         if (!LeftHandOccupied())
         {
+            if (hasCombinedItem) return;
             //Pickup item
             leftHandItem = DetectItem();
-            EnableItem(leftHandItem);            
-        }        
+            EnableItem(leftHandItem);
+        }
         else
         {
             DropLeftHandItem();
         }
     }
-
-    private void OnRightHandPickup()
+    private void RightHandPickUp()
     {
         if (!RightHandOccupied())
         {
+            if (hasCombinedItem) return;
             //Pickup item
             rightHandItem = DetectItem();
-            EnableItem(rightHandItem);                       
-        }        
+            EnableItem(rightHandItem);
+        }
         else
         {
             DropRightHandItem();
         }
     }
 
+    //Event System
+    private void OnLeftHandEvent()
+    {
+        LeftHandPickup();
+    }
+
+    private void OnRightHandEvent()
+    {
+        RightHandPickUp();
+    }
+
     private void CombinedItem(GameObject item)
     {
-        DropAllItems();
+        StashCombineBaseItems();
         EquipCombinedItem(item);
     }
 }
