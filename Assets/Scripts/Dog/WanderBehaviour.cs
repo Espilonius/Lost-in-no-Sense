@@ -5,55 +5,62 @@ using UnityEngine.AI;
 
 public class WanderBehaviour : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] float wanderRadius = 5f;
+    [SerializeField] Transform player;
+    private FollowPlayer fp;
+    [SerializeField] float wanderRadius = 20f;
     [SerializeField] float wanderTimer = 6f;
-    [SerializeField] float timer;
-    [SerializeField] float maxDistance = 20f;
+    private float timer;
+    [SerializeField] float minFollowDistance = 10f;
 
     NavMeshAgent navAgent;
-    bool isWandering;
+    private Vector3 targetPosition;
 
 
     void Awake()
     {
+        fp = GetComponent<FollowPlayer>();
         navAgent = GetComponent<NavMeshAgent>();
-        GetComponent<FollowPlayer>().enabled = false;
-
+        fp.enabled = false;
         timer = wanderTimer;
     }
 
     private void Update()
     {
-
-        if (PlayerIsMoving() && CheckDistance() >= maxDistance)
+        if (PlayerIsMoving() && CheckDistance() >= minFollowDistance)
         {
-            GetComponent<FollowPlayer>().enabled = true;
+            fp.enabled = true;
+            Debug.Log("first if");
+
+
         }
-        else {
-            GetComponent<FollowPlayer>().enabled = false;
 
+        else if (!PlayerIsMoving())
+        {
+            fp.enabled = false;
+            Debug.Log("esle if");
+            Debug.Log(navAgent.remainingDistance);
+
+            if (navAgent.remainingDistance < 5f) // check if agent has reached its target position
+            {
+
+                Debug.Log("inside else if");
+                targetPosition = RandomCircle(player.transform.position, wanderRadius); // set new target position
+                navAgent.SetDestination(targetPosition); // move towards target position
+            }
         }
-
-
 
     }
 
     private bool PlayerIsMoving()
     {
-        if (target.GetComponent<Rigidbody>().velocity.magnitude > 0)
-        {
+        return player.GetComponent<Rigidbody>().velocity.magnitude > 0;
 
-            return true;
 
-        }
-        else { return false; }
-        
     }
 
     float CheckDistance()
     {
-        return Vector3.Distance(transform.position, target.transform.position);
+        return Vector3.Distance(transform.position, player.transform.position);
     }
 
 
@@ -66,7 +73,6 @@ public class WanderBehaviour : MonoBehaviour
         NavMeshHit hit;
         NavMesh.SamplePosition(pos, out hit, radius, NavMesh.AllAreas); // sample position on NavMesh
         return hit.position;
-
     }
 
 
