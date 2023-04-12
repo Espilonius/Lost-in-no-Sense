@@ -155,6 +155,10 @@ public class PlayerInteraction : MonoBehaviour
         rightHandItem.transform.position = rightHandPosition.transform.position;
         hasCombinedItem = true;
     }
+    public bool HasCombinedItem()
+    {
+        return hasCombinedItem;
+    }
 
 
     private void LeftHandPickup()

@@ -104,9 +104,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe4e925b3ce1e464f9a300cdf13fd9b4, type: 2}
-  m_sharedMaterial: {fileID: 4614569878067324415, guid: fe4e925b3ce1e464f9a300cdf13fd9b4,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -203,7 +202,7 @@ Transform:
   - {fileID: 6302322956927640030}
   - {fileID: 1675960308502451920}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6302322956879961638
 GameObject:
@@ -327,7 +326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2576794952835613206}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayButtonClicked
         m_Mode: 1
@@ -351,7 +350,7 @@ GameObject:
   - component: {fileID: 6302322956927640029}
   - component: {fileID: 6302322956927640028}
   - component: {fileID: 6302322956927640031}
-  - component: {fileID: 2576794952835613206}
+  - component: {fileID: 7431741496474193342}
   m_Layer: 0
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -446,7 +445,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2576794952835613206
+--- !u!114 &7431741496474193342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,11 +454,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6302322956927640025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e24bd834174e045438d630e3ddf44331, type: 3}
+  m_Script: {fileID: 11500000, guid: dd2c000fbe5856f46814c99482111124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstLevelScene: Level01
-  inputReader: {fileID: 11400000, guid: 127ee7f45f1beec4888e3f756d18bf33, type: 2}
+  inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
 --- !u!1 &6302322957332651247
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,9 +527,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe4e925b3ce1e464f9a300cdf13fd9b4, type: 2}
-  m_sharedMaterial: {fileID: 4614569878067324415, guid: fe4e925b3ce1e464f9a300cdf13fd9b4,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -864,7 +862,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2576794952835613206}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: QuitButtonClicked
         m_Mode: 1
@@ -944,9 +942,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Debugger
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4a355618bfe7e4748a326c2e33348f8e, type: 2}
-  m_sharedMaterial: {fileID: 7451328774389887477, guid: 4a355618bfe7e4748a326c2e33348f8e,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1156,9 +1153,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fe4e925b3ce1e464f9a300cdf13fd9b4, type: 2}
-  m_sharedMaterial: {fileID: 4614569878067324415, guid: fe4e925b3ce1e464f9a300cdf13fd9b4,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
