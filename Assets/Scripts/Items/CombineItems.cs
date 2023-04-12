@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
-using static UnityEditor.Progress;
 
 public class CombineItems : MonoBehaviour
 {

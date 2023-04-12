@@ -399,11 +399,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1831581910}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &403499297
+--- !u!114 &403499302 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7431741496474193342, guid: 95585ba7b45f8d74c8e0f06b3582a171,
+    type: 3}
+  m_PrefabInstance: {fileID: 1831581910}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403499291}
   m_Enabled: 1
@@ -411,8 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2c000fbe5856f46814c99482111124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevelScene: ItemTest
-  inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
 --- !u!1 &667687064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8787745615424544804, guid: be1c7cb6248bc734f91c724dd3db6628,
@@ -497,7 +495,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 403499297}
+      objectReference: {fileID: 403499302}
     - target: {fileID: 6302322956879961636, guid: 95585ba7b45f8d74c8e0f06b3582a171,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -522,6 +520,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302322957720603558, guid: 95585ba7b45f8d74c8e0f06b3582a171,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302322957720603558, guid: 95585ba7b45f8d74c8e0f06b3582a171,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitButtonClicked
       objectReference: {fileID: 0}
     - target: {fileID: 6302322958442747104, guid: 95585ba7b45f8d74c8e0f06b3582a171,
         type: 3}
@@ -564,7 +572,13 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7431741496474193342, guid: 95585ba7b45f8d74c8e0f06b3582a171,
+        type: 3}
+      propertyPath: firstLevelScene
+      value: Level01
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2576794952835613206, guid: 95585ba7b45f8d74c8e0f06b3582a171, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1675960308502451919, guid: 95585ba7b45f8d74c8e0f06b3582a171, type: 3}
     m_AddedGameObjects:
@@ -581,10 +595,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1831581912}
-    - targetCorrespondingSourceObject: {fileID: 6302322956927640025, guid: 95585ba7b45f8d74c8e0f06b3582a171,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403499297}
   m_SourcePrefab: {fileID: 100100000, guid: 95585ba7b45f8d74c8e0f06b3582a171, type: 3}
 --- !u!4 &1831581911 stripped
 Transform:
