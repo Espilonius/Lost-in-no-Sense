@@ -38,7 +38,6 @@ public class WanderBehaviour : MonoBehaviour
         {
             fp.enabled = false;
             Debug.Log("esle if");
-            Debug.Log(navAgent.remainingDistance);
 
             if (navAgent.remainingDistance < 5f) // check if agent has reached its target position
             {
