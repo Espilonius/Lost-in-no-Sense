@@ -267,6 +267,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2129439677399508712, guid: 95585ba7b45f8d74c8e0f06b3582a171,
+        type: 3}
+      propertyPath: grabCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: d1d952ce60053cd4aae8bab9176e3e48, type: 3}
+    - target: {fileID: 2129439677399508712, guid: 95585ba7b45f8d74c8e0f06b3582a171,
+        type: 3}
+      propertyPath: defaultCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: c5a2c4ede3a972e46b11c62b98975f9f, type: 3}
     - target: {fileID: 6302322956724556612, guid: 95585ba7b45f8d74c8e0f06b3582a171,
         type: 3}
       propertyPath: m_RootOrder
