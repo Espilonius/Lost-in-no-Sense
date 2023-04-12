@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7892323203599545192
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: ad7cc4d2be753a841a37e3a07be5b966
+  m_EffectName: Attenuation
+  m_MixLevel: 680672048c41f204fbd73f96757012bb
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-6402111974408700581
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dog
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 8b2662f3723e1a0449141bed23188fa2
+  m_Children: []
+  m_Volume: f147d2ea637b1a043b6b1a8d9c89c96c
+  m_Pitch: c6983da1da8ae884db3d0d8c07ab4a48
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7892323203599545192}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-3982454399129182856
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f43ce55713e868a4eb2a965f45d19f38
+  m_EffectName: Attenuation
+  m_MixLevel: 3190ec9195bbcee4c992e2ef3cd50366
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -21,6 +68,8 @@ AudioMixerController:
   m_AudioMixerGroupViews:
   - guids:
     - 5848f2fa16f995e4c9f6fd1e3936d53d
+    - 8b2662f3723e1a0449141bed23188fa2
+    - 960303326f846fb43a250969b3458e0c
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -33,7 +82,9 @@ AudioMixerGroupController:
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 5848f2fa16f995e4c9f6fd1e3936d53d
-  m_Children: []
+  m_Children:
+  - {fileID: -6402111974408700581}
+  - {fileID: 608491697280124963}
   m_Volume: 6812085fdc4b7c84d8af0a92174ed023
   m_Pitch: d1314b0f1ba88604f9f0c7517c3b25cc
   m_Send: 00000000000000000000000000000000
@@ -69,3 +120,22 @@ AudioMixerSnapshotController:
   m_FloatValues:
     6812085fdc4b7c84d8af0a92174ed023: 0.04171297
   m_TransitionOverrides: {}
+--- !u!243 &608491697280124963
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Footsteps
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 960303326f846fb43a250969b3458e0c
+  m_Children: []
+  m_Volume: 42709513323462a4baa92e736b89283e
+  m_Pitch: c4240329110919342abf9bfe458d33c9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -3982454399129182856}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0

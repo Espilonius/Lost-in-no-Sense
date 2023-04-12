@@ -19,8 +19,8 @@ public class SettingsMenu : MonoBehaviour
         invertY.isOn = ps.InvertY;
         horizontal.value = ps.HorizontalSensitivity;
         vertical.value = ps.VerticalSensitivity;
-        audioMixer.GetFloat("Volume", out float vol);
-        volume.value = vol;
+        //audioMixer.GetFloat("Volume", out float vol);
+        //volume.value = vol;
     }
     private void ConvertToResolution(string text)
     {
