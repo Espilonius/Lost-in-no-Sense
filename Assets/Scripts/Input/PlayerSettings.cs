@@ -37,7 +37,6 @@ public class PlayerSettings : ScriptableObject
     {
         invertY = value;
         PlayerPrefs.SetInt("InvertY", value ? 1 : 0);
-        Debug.Log("Invert Y Called: " + invertY.ToString());
         PlayerPrefs.Save();
     }
 }

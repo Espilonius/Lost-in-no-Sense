@@ -13,14 +13,25 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] InputReader inputReader;
     [SerializeField] Slider volume, horizontal, vertical;
     [SerializeField] Toggle invertY;
+    [SerializeField] float defaultVolume = 5f;
+    [SerializeField] float minVolume = -80f;
+    [SerializeField] float maxVolume = 15f;
+
     private void OnEnable()
     {
         inputReader.EnableUI();
         invertY.isOn = ps.InvertY;
         horizontal.value = ps.HorizontalSensitivity;
         vertical.value = ps.VerticalSensitivity;
-        //audioMixer.GetFloat("Volume", out float vol);
-        //volume.value = vol;
+
+
+
+        // Set slider values
+        volume.minValue = minVolume;
+        volume.maxValue = maxVolume;
+        volume.value = defaultVolume;
+        audioMixer.SetFloat("Volume", defaultVolume);
+
     }
     private void ConvertToResolution(string text)
     {
@@ -29,7 +40,12 @@ public class SettingsMenu : MonoBehaviour
     }
     public void ToggleResolution(int index) => ConvertToResolution(resolutionDropdown.options[index].text);
     public void FullscreenToggle(bool isFullscreen) => Screen.fullScreen = isFullscreen;
-    public void SetVolume(float volume) => audioMixer.SetFloat("Volume", volume);
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
+        PlayerPrefs.SetFloat("Volume", volume);
+        PlayerPrefs.Save();
+    }
     public void SetHorizontal(float horizontal) => ps.SetHorizontal(horizontal);
     public void SetVertical(float vertical) => ps.SetVertical(vertical);
     public void InvertY(bool value) => ps.SetInvertY(value);
