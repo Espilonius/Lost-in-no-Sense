@@ -3360,7 +3360,7 @@ MonoBehaviour:
       - m_Target: {fileID: 4695324091211797542}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: InvertY
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3369,7 +3369,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &4419456717758507598
 GameObject:
   m_ObjectHideFlags: 0
