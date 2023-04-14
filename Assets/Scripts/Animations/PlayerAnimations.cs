@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    float movementSpeed;
     [SerializeField] InputReader inputReader = default;
     [SerializeField] Animator playerAnimator;
     private bool isJumping = false;

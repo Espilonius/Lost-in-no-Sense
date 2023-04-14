@@ -257,6 +257,11 @@ PrefabInstance:
       propertyPath: minVolume
       value: -80
       objectReference: {fileID: 0}
+    - target: {fileID: 7431741496474193342, guid: 95585ba7b45f8d74c8e0f06b3582a171,
+        type: 3}
+      propertyPath: firstLevelScene
+      value: StartingLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -522,7 +527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overallVolume: {fileID: 430348423}
-  music: {fileID: 8959430543788951097, guid: d3335e9644f13b443b8e3a14a5d76de9, type: 2}
   menuMusic: {fileID: 8300000, guid: 7c0fd68b207b25c419b75d87550e4c03, type: 3}
 --- !u!114 &501646702 stripped
 MonoBehaviour:
