@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
-public class MusicPlay : MonoBehaviour
+public class AmbiencePlay : MonoBehaviour
 {
     [SerializeField] AudioSource overallVolume;
-    [SerializeField] AudioClip menuMusic;
-    private void Start()
+    [SerializeField] AudioClip ambienceSPX;
+    private void OnEnable()
     {
-        overallVolume.clip = menuMusic;
+        overallVolume.clip = ambienceSPX;
         overallVolume.loop = true;
         overallVolume.Play();
     }

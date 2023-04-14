@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36665aa79152468418fb652eeadbde12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnFx: {fileID: 605115955}
+  btnFx: {fileID: 1223749302}
   hoverFx: {fileID: 8300000, guid: 512d15825f812474f946e834fce6fc0b, type: 3}
   clickFx: {fileID: 8300000, guid: 03409bc8e4e0a2f4aba2da09442810fe, type: 3}
 --- !u!82 &605115955
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36665aa79152468418fb652eeadbde12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnFx: {fileID: 605115959}
+  btnFx: {fileID: 1223749302}
   hoverFx: {fileID: 8300000, guid: 512d15825f812474f946e834fce6fc0b, type: 3}
   clickFx: {fileID: 8300000, guid: 03409bc8e4e0a2f4aba2da09442810fe, type: 3}
 --- !u!1 &2442158538107733554
@@ -1629,7 +1629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36665aa79152468418fb652eeadbde12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnFx: {fileID: 1259315924}
+  btnFx: {fileID: 1223749302}
   hoverFx: {fileID: 8300000, guid: 512d15825f812474f946e834fce6fc0b, type: 3}
   clickFx: {fileID: 8300000, guid: 03409bc8e4e0a2f4aba2da09442810fe, type: 3}
 --- !u!1 &2442158538724215194
@@ -1643,6 +1643,7 @@ GameObject:
   - component: {fileID: 2442158538724215193}
   - component: {fileID: 605115956}
   - component: {fileID: 605115957}
+  - component: {fileID: 1223749302}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1666,7 +1667,7 @@ Transform:
   - {fileID: 7496571659109470905}
   - {fileID: 393191820}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &605115956
 MonoBehaviour:
@@ -1706,6 +1707,102 @@ MonoBehaviour:
   defaultVolume: 5
   minVolume: -80
   maxVolume: 15
+--- !u!82 &1223749302
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2442158538724215194}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2442158538728330721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,6 +2188,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6675582012034904293, guid: be1c7cb6248bc734f91c724dd3db6628,
+        type: 3}
+      propertyPath: btnFx
+      value: 
+      objectReference: {fileID: 1223749302}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4097568063210601334, guid: be1c7cb6248bc734f91c724dd3db6628, type: 3}
