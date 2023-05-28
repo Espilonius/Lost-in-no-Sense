@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: e633e8bc4249f4e45875a6fdeeacdd41
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - overallVolume: {instanceID: 0}
+  - ambienceSPX: {fileID: 8300000, guid: 2db4d76a2346fc3438f5200f9248eccf, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

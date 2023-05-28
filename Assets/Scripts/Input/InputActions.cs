@@ -46,15 +46,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""62516794-35cc-4716-855c-3ca5363e2c63"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Mouse"",
                     ""type"": ""PassThrough"",
                     ""id"": ""731f312b-6a05-4c3e-9f25-09bd7e7f9c58"",
@@ -71,6 +62,42 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftMouseButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""62516794-35cc-4716-855c-3ca5363e2c63"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightMouseButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""66a821ab-2290-42b5-9440-bd3eb8beb50a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""31abbff7-ad33-4bf5-9de3-447391ac8522"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Combine"",
+                    ""type"": ""Button"",
+                    ""id"": ""996c0a34-d45b-48b0-b60e-84845ece9f80"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -82,17 +109,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jumping"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""95868ed4-a390-4662-b161-b5b737833667"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -172,6 +188,226 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9351b142-fc3e-420e-b907-f57b79488ce5"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightMouseButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95868ed4-a390-4662-b161-b5b737833667"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMouseButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""904a1e22-b907-4629-94bc-2e0266f0d965"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1331f0f6-4aae-4076-918f-a5d8861cf3d9"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Combine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""32c0f3dc-7859-4bbd-99ba-76d98c017d87"",
+            ""actions"": [
+                {
+                    ""name"": ""Point"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1a65219f-9aba-46e4-8e1c-92f1a116a427"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1659ebb1-aea7-4e9c-a33b-ca053c333c15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ScrollWheel"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""841c2443-f65e-4389-b0b2-fc56ac188598"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MiddleClick"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""410d8365-59ff-482f-ab3e-f69c6d8f34a8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7d0a59a-6a22-440e-a50d-7475cd4a1680"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d1e860e0-560c-4468-8b55-e888b5d691c7"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6eba9bc8-658d-4520-ba29-e1475a2cd240"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab881308-4517-46c3-8508-96a10269fe74"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollWheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f1351e6-9584-4229-bdc0-3775e6e190c1"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MiddleClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""982e3687-4d5d-444e-9dfb-edfe4c172392"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""CombineMode"",
+            ""id"": ""1854e035-4c17-44bc-8b7e-12a8b9d20e89"",
+            ""actions"": [
+                {
+                    ""name"": ""CloudClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6b37d61-30d4-432b-beab-95a0f12c5391"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ExitCombineMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f0a786d-84d3-4258-9ca2-26f7b93d10f1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseMove"",
+                    ""type"": ""Value"",
+                    ""id"": ""e3ee917b-a6a2-46c8-a24b-57cb5d22b94f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9c0aba10-e1dd-4486-9f1c-eaa98404b364"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloudClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d42ee06-330a-466a-b5c7-038107a1839d"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExitCombineMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05c3130d-378f-4328-a34f-024fad7cced2"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -182,9 +418,24 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_PlayerInput = asset.FindActionMap("PlayerInput", throwIfNotFound: true);
         m_PlayerInput_Movement = m_PlayerInput.FindAction("Movement", throwIfNotFound: true);
         m_PlayerInput_Jumping = m_PlayerInput.FindAction("Jumping", throwIfNotFound: true);
-        m_PlayerInput_Attack = m_PlayerInput.FindAction("Attack", throwIfNotFound: true);
         m_PlayerInput_Mouse = m_PlayerInput.FindAction("Mouse", throwIfNotFound: true);
         m_PlayerInput_Sprint = m_PlayerInput.FindAction("Sprint", throwIfNotFound: true);
+        m_PlayerInput_LeftMouseButton = m_PlayerInput.FindAction("LeftMouseButton", throwIfNotFound: true);
+        m_PlayerInput_RightMouseButton = m_PlayerInput.FindAction("RightMouseButton", throwIfNotFound: true);
+        m_PlayerInput_Escape = m_PlayerInput.FindAction("Escape", throwIfNotFound: true);
+        m_PlayerInput_Combine = m_PlayerInput.FindAction("Combine", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
+        m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
+        m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
+        m_UI_MiddleClick = m_UI.FindAction("MiddleClick", throwIfNotFound: true);
+        m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
+        // CombineMode
+        m_CombineMode = asset.FindActionMap("CombineMode", throwIfNotFound: true);
+        m_CombineMode_CloudClick = m_CombineMode.FindAction("CloudClick", throwIfNotFound: true);
+        m_CombineMode_ExitCombineMode = m_CombineMode.FindAction("ExitCombineMode", throwIfNotFound: true);
+        m_CombineMode_MouseMove = m_CombineMode.FindAction("MouseMove", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -246,18 +497,24 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private IPlayerInputActions m_PlayerInputActionsCallbackInterface;
     private readonly InputAction m_PlayerInput_Movement;
     private readonly InputAction m_PlayerInput_Jumping;
-    private readonly InputAction m_PlayerInput_Attack;
     private readonly InputAction m_PlayerInput_Mouse;
     private readonly InputAction m_PlayerInput_Sprint;
+    private readonly InputAction m_PlayerInput_LeftMouseButton;
+    private readonly InputAction m_PlayerInput_RightMouseButton;
+    private readonly InputAction m_PlayerInput_Escape;
+    private readonly InputAction m_PlayerInput_Combine;
     public struct PlayerInputActions
     {
         private @InputActions m_Wrapper;
         public PlayerInputActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerInput_Movement;
         public InputAction @Jumping => m_Wrapper.m_PlayerInput_Jumping;
-        public InputAction @Attack => m_Wrapper.m_PlayerInput_Attack;
         public InputAction @Mouse => m_Wrapper.m_PlayerInput_Mouse;
         public InputAction @Sprint => m_Wrapper.m_PlayerInput_Sprint;
+        public InputAction @LeftMouseButton => m_Wrapper.m_PlayerInput_LeftMouseButton;
+        public InputAction @RightMouseButton => m_Wrapper.m_PlayerInput_RightMouseButton;
+        public InputAction @Escape => m_Wrapper.m_PlayerInput_Escape;
+        public InputAction @Combine => m_Wrapper.m_PlayerInput_Combine;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -273,15 +530,24 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Jumping.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnJumping;
                 @Jumping.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnJumping;
                 @Jumping.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnJumping;
-                @Attack.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnAttack;
-                @Attack.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnAttack;
-                @Attack.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnAttack;
                 @Mouse.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouse;
                 @Mouse.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouse;
                 @Mouse.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouse;
                 @Sprint.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnSprint;
+                @LeftMouseButton.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnLeftMouseButton;
+                @LeftMouseButton.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnLeftMouseButton;
+                @LeftMouseButton.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnLeftMouseButton;
+                @RightMouseButton.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnRightMouseButton;
+                @RightMouseButton.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnRightMouseButton;
+                @RightMouseButton.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnRightMouseButton;
+                @Escape.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnEscape;
+                @Combine.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCombine;
+                @Combine.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCombine;
+                @Combine.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnCombine;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -292,25 +558,165 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Jumping.started += instance.OnJumping;
                 @Jumping.performed += instance.OnJumping;
                 @Jumping.canceled += instance.OnJumping;
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
                 @Mouse.started += instance.OnMouse;
                 @Mouse.performed += instance.OnMouse;
                 @Mouse.canceled += instance.OnMouse;
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @LeftMouseButton.started += instance.OnLeftMouseButton;
+                @LeftMouseButton.performed += instance.OnLeftMouseButton;
+                @LeftMouseButton.canceled += instance.OnLeftMouseButton;
+                @RightMouseButton.started += instance.OnRightMouseButton;
+                @RightMouseButton.performed += instance.OnRightMouseButton;
+                @RightMouseButton.canceled += instance.OnRightMouseButton;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+                @Combine.started += instance.OnCombine;
+                @Combine.performed += instance.OnCombine;
+                @Combine.canceled += instance.OnCombine;
             }
         }
     }
     public PlayerInputActions @PlayerInput => new PlayerInputActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_Point;
+    private readonly InputAction m_UI_Click;
+    private readonly InputAction m_UI_ScrollWheel;
+    private readonly InputAction m_UI_MiddleClick;
+    private readonly InputAction m_UI_Escape;
+    public struct UIActions
+    {
+        private @InputActions m_Wrapper;
+        public UIActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Point => m_Wrapper.m_UI_Point;
+        public InputAction @Click => m_Wrapper.m_UI_Click;
+        public InputAction @ScrollWheel => m_Wrapper.m_UI_ScrollWheel;
+        public InputAction @MiddleClick => m_Wrapper.m_UI_MiddleClick;
+        public InputAction @Escape => m_Wrapper.m_UI_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            {
+                @Point.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPoint;
+                @Point.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPoint;
+                @Point.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPoint;
+                @Click.started -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
+                @ScrollWheel.started -= m_Wrapper.m_UIActionsCallbackInterface.OnScrollWheel;
+                @ScrollWheel.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnScrollWheel;
+                @ScrollWheel.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnScrollWheel;
+                @MiddleClick.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMiddleClick;
+                @MiddleClick.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMiddleClick;
+                @MiddleClick.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMiddleClick;
+                @Escape.started -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+            }
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Point.started += instance.OnPoint;
+                @Point.performed += instance.OnPoint;
+                @Point.canceled += instance.OnPoint;
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
+                @ScrollWheel.started += instance.OnScrollWheel;
+                @ScrollWheel.performed += instance.OnScrollWheel;
+                @ScrollWheel.canceled += instance.OnScrollWheel;
+                @MiddleClick.started += instance.OnMiddleClick;
+                @MiddleClick.performed += instance.OnMiddleClick;
+                @MiddleClick.canceled += instance.OnMiddleClick;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+            }
+        }
+    }
+    public UIActions @UI => new UIActions(this);
+
+    // CombineMode
+    private readonly InputActionMap m_CombineMode;
+    private ICombineModeActions m_CombineModeActionsCallbackInterface;
+    private readonly InputAction m_CombineMode_CloudClick;
+    private readonly InputAction m_CombineMode_ExitCombineMode;
+    private readonly InputAction m_CombineMode_MouseMove;
+    public struct CombineModeActions
+    {
+        private @InputActions m_Wrapper;
+        public CombineModeActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CloudClick => m_Wrapper.m_CombineMode_CloudClick;
+        public InputAction @ExitCombineMode => m_Wrapper.m_CombineMode_ExitCombineMode;
+        public InputAction @MouseMove => m_Wrapper.m_CombineMode_MouseMove;
+        public InputActionMap Get() { return m_Wrapper.m_CombineMode; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CombineModeActions set) { return set.Get(); }
+        public void SetCallbacks(ICombineModeActions instance)
+        {
+            if (m_Wrapper.m_CombineModeActionsCallbackInterface != null)
+            {
+                @CloudClick.started -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnCloudClick;
+                @CloudClick.performed -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnCloudClick;
+                @CloudClick.canceled -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnCloudClick;
+                @ExitCombineMode.started -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnExitCombineMode;
+                @ExitCombineMode.performed -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnExitCombineMode;
+                @ExitCombineMode.canceled -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnExitCombineMode;
+                @MouseMove.started -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnMouseMove;
+                @MouseMove.performed -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnMouseMove;
+                @MouseMove.canceled -= m_Wrapper.m_CombineModeActionsCallbackInterface.OnMouseMove;
+            }
+            m_Wrapper.m_CombineModeActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CloudClick.started += instance.OnCloudClick;
+                @CloudClick.performed += instance.OnCloudClick;
+                @CloudClick.canceled += instance.OnCloudClick;
+                @ExitCombineMode.started += instance.OnExitCombineMode;
+                @ExitCombineMode.performed += instance.OnExitCombineMode;
+                @ExitCombineMode.canceled += instance.OnExitCombineMode;
+                @MouseMove.started += instance.OnMouseMove;
+                @MouseMove.performed += instance.OnMouseMove;
+                @MouseMove.canceled += instance.OnMouseMove;
+            }
+        }
+    }
+    public CombineModeActions @CombineMode => new CombineModeActions(this);
     public interface IPlayerInputActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJumping(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
         void OnMouse(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnLeftMouseButton(InputAction.CallbackContext context);
+        void OnRightMouseButton(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
+        void OnCombine(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnPoint(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        void OnScrollWheel(InputAction.CallbackContext context);
+        void OnMiddleClick(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
+    }
+    public interface ICombineModeActions
+    {
+        void OnCloudClick(InputAction.CallbackContext context);
+        void OnExitCombineMode(InputAction.CallbackContext context);
+        void OnMouseMove(InputAction.CallbackContext context);
     }
 }

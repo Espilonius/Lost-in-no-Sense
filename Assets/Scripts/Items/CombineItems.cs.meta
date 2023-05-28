@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ee72b2ee15d5285489703eb6b17b1c48
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inputReader: {fileID: 11400000, guid: 6e7bb8b2ac35d5a49bc35b517599a935, type: 2}
+  - itemListSO: {fileID: 11400000, guid: b64574d3328b4ce40a071b3923edbfbd, type: 2}
+  - combineRecipes: {instanceID: 0}
+  - combineMode: {instanceID: 0}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
